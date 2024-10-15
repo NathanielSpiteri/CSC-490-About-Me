@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
 
     <style>
         body {
@@ -19,6 +20,7 @@
             color: #333;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            transition: background-color 0.5s, color 0.5s;
         }
 
         /* Smooth Scroll Navigation */
@@ -328,20 +330,25 @@
             color: #f4f4f4;
         }
 
+        /* Dark Mode Toggle Button */
         #toggleDarkMode {
             position: fixed;
             top: 10px;
             right: 10px;
-            padding: 10px;
+            padding: 10px 20px;
             background-color: #3498db;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+            font-size: 1em;
+            font-weight: bold;
         }
 
         #toggleDarkMode:hover {
             background-color: #2980b9;
+            transform: scale(1.1);
         }
 
         /* ChartJS Styling */
@@ -361,6 +368,13 @@
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
+
+            <button id="toggleDarkMode">Toggle Dark Mode</button> <!-- Dark Mode Button -->
+
+            <!--<div class="toggle-container" id="toggleDarkMode">
+                <div class="toggle-circle"></div>
+            </div>                -->            
+            
         </ul>
     </nav>
 
@@ -378,6 +392,22 @@
             <a href="mailto:nathaniel.spiteri@cix.csi.cuny.edu">Email: nathaniel.spiteri@cix.csi.cuny.edu</a>
         </address>
     </div>
+    
+    <!-- Add the CSS for the hover effect -->
+    <style>
+        /* Address and Email Styling */
+        .header address a {
+            color: white; /* Default link color */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth transition for color change */
+        }
+    
+        /* Hover effect for Address and Email */
+        .header address a:hover {
+            color: #f39c12; /* Change to noticeable orange color on hover */
+            text-decoration: underline; /* Optional: underline the text on hover */
+        }
+    </style>
 
     <div class="section" id="education">
         <h2>Education</h2>
@@ -506,7 +536,8 @@
     <div class="section">
         <h2>My Links</h2>
         <ul>
-            <li><a class="button" href="your-resume-link.pdf" target="_blank"><i class="fas fa-file icon"></i>Resume</a></li>
+            <li><a class="button" href="Resume.pdf" target="_blank"><i class="fas fa-file icon"></i>Resume</a></li>
+            <li><a class="button" href="Resume.pdf" download><i class="fas fa-download icon"></i>Download Resume</a></li> <!-- Resume Download Button -->
             <li><a class="button" href="https://github.com/NathanielSpiteri" target="_blank"><i class="fab fa-github icon"></i>GitHub</a></li>
             <li><a class="button" href="https://www.linkedin.com/in/nathaniel-spiteri-46a1b319b/" target="_blank"><i class="fab fa-linkedin icon"></i>LinkedIn</a></li>
         </ul>
@@ -598,5 +629,6 @@
             }
         });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
