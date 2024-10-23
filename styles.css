@@ -1,0 +1,87 @@
+/* Root variables for colors */
+:root {
+    --light-bg-color: #f7f7f7;
+    --dark-bg-color: #2b2b2b;
+    --light-text-color: #2b2b2b;
+    --dark-text-color: #f7f7f7;
+    --btn-color: #fff;
+    --btn-dark-bg-color: #222;
+    --btn-light-bg-color: #fff;
+}
+
+/* Basic styling for the nav */
+nav {
+    background-color: #3498db;
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+/* Center the nav links */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    flex: 1; /* Ensure the links take up the available space */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Align the theme slider to the right */
+.nav-item.theme-toggle {
+    position: absolute;
+    right: 20px; /* This ensures the slider is all the way to the right */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+}
+
+/* Styling the theme toggle button */
+.btn {
+    background-color: #fff;
+    border-radius: 30px;
+    width: 60px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Theme toggle button indicator */
+.btn__indicator {
+    background-color: var(--btn-color);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.4s ease;
+}
+
+/* Add transition for dark and light mode toggling */
+body.lightmode .btn__indicator {
+    transform: translateX(0);
+}
+
+body.darkmode .btn__indicator {
+    transform: translateX(30px);
+}
+
+/* Adjust the icon color */
+body.lightmode {
+    background-color: #e9ecef;
+    color: #333;
+}
+
+body.darkmode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.animated {
+    transition: transform 0.3s ease;
+}
